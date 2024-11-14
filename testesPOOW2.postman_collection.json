@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "241446ce-0412-449b-ac69-ca6d8475355e",
+		"name": "testesPOOW2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24655047"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/ecommerce/cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\": \"Thiago Bo\",\r\n\"cpf\": \"234.446.789-11\",\r\n\"email\": \"thiagobo@g.com\",\r\n\"endereco\": {\r\n\"cep\": \"12345-678\",\r\n\"rua\": \"Rua das Flores\",\r\n\"numero\": 123,\r\n\"bairro\": \"Centro\",\r\n\"cidade\": \"São Paulo\",\r\n\"estado\": \"SP\"\r\n}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ecommerce/cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ecommerce/cliente/listar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ecommerce/produto",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ecommerce/produto/listar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ecommerce/compra/comprar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
