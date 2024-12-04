@@ -6,6 +6,6 @@ import java.util.UUID;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-
-    Cliente findClienteByUuid(UUID uuidformatado);
+    public Cliente findByEmail(String email);
+    DadosCliente findClienteByUuid(UUID uuidformatado);
 }

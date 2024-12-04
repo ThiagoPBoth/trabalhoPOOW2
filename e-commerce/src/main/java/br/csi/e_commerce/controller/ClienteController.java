@@ -1,6 +1,7 @@
 package br.csi.e_commerce.controller;
 
 import br.csi.e_commerce.model.cliente.Cliente;
+import br.csi.e_commerce.model.cliente.DadosCliente;
 import br.csi.e_commerce.model.produto.Produto;
 import br.csi.e_commerce.service.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -41,11 +42,11 @@ public class ClienteController {
     public ResponseEntity salvar(@RequestBody @Valid Cliente cliente, UriComponentsBuilder uriComponentsBuilder){
         this.service.salvar(cliente);
         URI uri = uriComponentsBuilder.path("/cliente/uuid/{uuid}").buildAndExpand(cliente.getUuid()).toUri();
-        return ResponseEntity.created(uri).body(cliente);
+        return ResponseEntity.created(uri).body(new DadosCliente(cliente));
     }
 
     @GetMapping("/uuid/{uuid}")
-    public Cliente cliente(@PathVariable String uuid){
+    public DadosCliente cliente(@PathVariable String uuid){
         return this.service.getClienteUUID(uuid);
     }
 
@@ -57,7 +58,7 @@ public class ClienteController {
                             schema = @Schema(implementation = Cliente.class))),
             @ApiResponse(responseCode = "404", description = "Clientes não encontrados", content = @Content)
     })
-    public List<Cliente> listar(){
+    public List<DadosCliente> listar(){
         return this.service.listar();
 
     }

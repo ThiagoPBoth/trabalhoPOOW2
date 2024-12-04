@@ -38,6 +38,11 @@ public class Cliente {
     @Email
     private String email;
 
+    @NotBlank
+    private String senha;
+
+    private String permissao;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_id_endereco")
     private Endereco endereco;
