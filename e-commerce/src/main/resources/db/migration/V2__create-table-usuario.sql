@@ -1,0 +1,3 @@
+ALTER TABLE cliente
+    ADD COLUMN senha VARCHAR(100) NOT NULL,
+    ADD COLUMN permissao VARCHAR(20);
