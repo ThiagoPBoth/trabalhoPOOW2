@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "a0ef0109-fefe-4a7e-b637-c8c23dbb5de5",
+		"name": "testesSegundaEntregaPOOW2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24655047"
+	},
+	"item": [
+		{
+			"name": "novoClienteAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQXZhbGlhciBQcm9qZXRvcyIsInN1YiI6InRoaWFnb0BnbWFpbC5jb20iLCJST0xFIjoiUk9MRV9DTElFTlRFIiwiZXhwIjoxNzM0MDI0NDI5fQ.I94fjdX7bCpi_xsljHtQsKrBS3xZX_TyskbjENirQkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\": \"Thiago Both\",\r\n\"cpf\": \"111.446.789-11\",\r\n\"email\": \"thi@gmail.com\",\r\n\"senha\": 123,\r\n\"permissao\": \"ROLE_ADMIN\",\r\n\"endereco\": {\r\n\"cep\": \"12345-678\",\r\n\"rua\": \"Rua das Flores\",\r\n\"numero\": 123,\r\n\"bairro\": \"Centro\",\r\n\"cidade\": \"São Paulo\",\r\n\"estado\": \"SP\"\r\n}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ecommerce/cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"thi@gmail.com\",\r\n\"senha\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ecommerce/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrarProduto",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "novoClienteCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\": \"Marcos Tal\",\r\n\"cpf\": \"111.555.789-11\",\r\n\"email\": \"mar@gmail.com\",\r\n\"senha\": 123,\r\n\"permissao\": \"ROLE_ADMIN\",\r\n\"endereco\": {\r\n\"cep\": \"12345-678\",\r\n\"rua\": \"Rua das Flores\",\r\n\"numero\": 123,\r\n\"bairro\": \"Centro\",\r\n\"cidade\": \"São Paulo\",\r\n\"estado\": \"SP\"\r\n}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ecommerce/cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"mar@gmail.com\",\r\n\"senha\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ecommerce/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarClientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQXZhbGlhciBQcm9qZXRvcyIsInN1YiI6InRoaUBnbWFpbC5jb20iLCJST0xFIjoiUk9MRV9BRE1JTiIsImV4cCI6MTczNDAyNTM4MH0._I8UU3B8cvC4A7Lu75TOZkRbPbncgiETIrMJFNWCb6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ecommerce/cliente/listar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cliente",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarClienteUUID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQXZhbGlhciBQcm9qZXRvcyIsInN1YiI6InRoaUBnbWFpbC5jb20iLCJST0xFIjoiUk9MRV9BRE1JTiIsImV4cCI6MTczNDAyNTM4MH0._I8UU3B8cvC4A7Lu75TOZkRbPbncgiETIrMJFNWCb6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ecommerce/cliente/uuid/eefd2c41-bb3c-47c4-bb9c-cd7ab5b9e50e",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cliente",
+						"uuid",
+						"eefd2c41-bb3c-47c4-bb9c-cd7ab5b9e50e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarProdutos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "buscarProdutoUUID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "fazerCompra",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQXZhbGlhciBQcm9qZXRvcyIsInN1YiI6Im1hckBnbWFpbC5jb20iLCJST0xFIjoiUk9MRV9DTElFTlRFIiwiZXhwIjoxNzM0MDI1MzU4fQ.hy5a6f5P6siiC-mwbEEV9FuUnSla-PdlbeGqyznFZDU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"clienteId\": 1,\r\n\"itensCompra\": [\r\n{\r\n\"produtoId\": 1,\r\n\"quantidade\": 1\r\n}\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ecommerce/compra/comprar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"compra",
+						"comprar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

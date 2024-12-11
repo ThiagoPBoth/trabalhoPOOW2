@@ -29,9 +29,15 @@ public class SecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->
                         auth.requestMatchers(HttpMethod.POST,"/login").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/cliente").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/cliente/listar").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.POST,"/cliente").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/cliente/uuid/{uuid}").hasAuthority("ROLE_ADMIN")
                                 .requestMatchers(HttpMethod.GET,"/usuario").hasAuthority("ROLE_ADMIN")
                                 .requestMatchers(HttpMethod.GET,"/aluno").hasAnyAuthority("ROLE_ALUNO","ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/produto/listar").hasAnyAuthority("ROLE_CLIENTE", "ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.POST,"/produto").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/produto/uuid/{uuid}").hasAuthority("ROLE_CLIENTE")
+                                .requestMatchers(HttpMethod.POST,"/compra/comprar").hasAnyAuthority("ROLE_CLIENTE")
                                 .anyRequest().authenticated())
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
